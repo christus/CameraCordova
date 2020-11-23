@@ -1,0 +1,87 @@
+<div class="controls">
+  <div class="pictures">
+      <img class="originalPicture" [src]="originalImg" *ngIf="showOriginalImg"/>
+      <img class="croppedPicture" [src]="croppedImage"/>
+  </div>
+<!-- <div class="block">
+  <button id="startCameraAboveButton">Start Camera Above HTML</button>
+  <button id="stopCameraButton">Stop Camera</button>
+</div> -->
+
+<!-- <div class="block">
+  <p style="margin-top:0px"><button id="startCameraBelowButton">Start Camera Behind HTML</button></p>
+
+  <p style="margin-bottom:0px">
+    Color Effect:
+    <select id="selectColorEffect">
+      <option selected value="none">none</option>
+      <option value="aqua">aqua</option>
+      <option value="blackboard">blackboard</option>
+      <option value="mono">mono</option>
+      <option value="negative">negative</option>
+      <option value="posterize">posterize</option>
+      <option value="sepia">sepia</option>
+      <option value="solarize">solarize</option>
+      <option value="whiteboard">whiteboard</option>
+    </select>
+  </p>
+
+  <p style="margin-bottom:0px;">
+    Flash Mode:
+    <select id="selectFlashMode">
+      <option selected value="off">off</option>
+      <option value="on">on</option>
+      <option value="auto">auto</option>
+      <option value="torch">torch</option>
+    </select>
+  </p>
+
+  <div id="androidOnly">
+    <p style="margin-bottom:0px;">
+      Zoom:
+      <span id="zoomValue"style="margin: 0 5px;">1</span>
+      <input type="range" id="zoomSlider" min="1" max="5" value="1" />
+    </p>
+  </div>
+</div> -->
+<div id="camerablock" class="camerablock" *ngIf="showCameraPreview">
+  <button (click)="takePictureButton()">Take Picture</button>
+  <button id="switchCameraButton">Switch Camera</button>
+  <!-- <button id="changePreviewSize">Change Preview Size</button> -->
+</div>
+<div id="previewblock" class="previewblock" *ngIf="showPreview">
+  <button (click)="confirmPreview()">Tick</button>
+  <button (click)="deletePreview()">Delete</button>
+  <!-- <button id="changePreviewSize">Change Preview Size</button> -->
+</div>
+<div id="cropblock" class="previewblock" *ngIf="showCropview">
+  <button (click)="confirmCrop()">Crop</button>
+  <button id="delete">Retry</button>
+  <!-- <button id="changePreviewSize">Change Preview Size</button> -->
+</div>
+
+<image-cropper
+    [imageBase64]="imageBase64"
+    [maintainAspectRatio]="true"
+    [aspectRatio]="4 / 3"
+    format="png"
+    (imageCropped)="imageCropped($event)"
+    (imageLoaded)="imageLoaded()"
+    (cropperReady)="cropperReady()"
+    (loadImageFailed)="loadImageFailed()"
+></image-cropper>
+
+<!-- <div class="block">
+  <button id="hideButton">Hide</button>
+  <button id="showButton">Show</button>
+</div> -->
+
+<!-- <div class="block">
+  <button id="showSupportedPictureSizes">Supported Picture Sizes</button>
+</div> -->
+</div>
+<canvas id = 'canvas'></canvas>
+
+<div class="container">
+  <img class="img_size" src="{{imgFile}}">
+</div>

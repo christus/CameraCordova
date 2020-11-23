@@ -1,0 +1,5 @@
+/* You can add global styles to this file, and also import other style files */
+image-cropper .overlay {
+    outline: rgb(0 0 0 ) solid 100vw !important;
+  }
+  

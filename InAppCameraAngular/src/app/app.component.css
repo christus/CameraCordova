@@ -1,0 +1,54 @@
+body, html{
+    height:100%;
+  }
+  body{
+    color:#333;
+    text-align: center;
+    font-family: sans-serif;
+    background-color: transparent;
+    background-repeat:repeat;
+    background-size: cover;
+  }
+  .block,
+  .camerablock,
+  .previewblock{
+    padding: 2px;
+    background: #00ccff;
+    border:1px solid #111;
+    border-radius: 3px;
+    position:absolute;
+    bottom: 5%;
+    left: 50%;
+    top: 90%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: inline-table;
+  }
+  button{
+    background: gray;
+    color:#333;
+    border-radius: 3px;
+    border:1px solid #ccc;
+    margin:.25rem;
+  }
+  .pictures{
+    position: absolute;
+    display: block;
+    top: 0;
+  }
+  .originalPicture,
+  .croppedPicture{
+    display: block;
+    margin-top: 20px;
+    margin-left: 2px;
+    max-width: 100%; /* This rule is very important, please do not ignore this! */
+    width:  95vw;
+  }
+
+.img_size{
+  width: 250px;
+  height: 250px;
+}
+.container{
+  margin-top: 108px;
+}
